@@ -12,6 +12,23 @@ Enjoy responsibly!
 @ihatetomatoes
 
 */
+body {
+    margin:0;
+  }
+
+.imagen img {
+  position: absolute;
+  top: -40%;
+  /** Espaciado de parte de arriba **/
+  left: 33%;
+  /** mover de izquierda a derecha**/
+  z-index: 25;
+  /** Capas**/
+}
+
+canvas {
+    position: fixed;
+  }
 
 /* ==========================================================================
    Chrome Frame prompt
@@ -35,36 +52,6 @@ h1 {
   color: #eeeeee;
 }
 
-body {
-  margin: 0;
-
-}
-
-.plasma {
-  background-color: #ff4081;
-  /*IMPORTANTE*/
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1001;
-}
-
-canvas {
-  position: fixed;
-}
-
-.imagen img {
-  position: absolute;
-  top: 14%;
-  /** Espaciado de parte de arriba **/
-  left: 33%;
-  /** mover de izquierda a derecha**/
-  z-index: 25;
-  /** Capas**/
-}
-
-
-
 #loader-wrapper {
   position: fixed;
   top: 0;
@@ -74,20 +61,16 @@ canvas {
   z-index: 1000;
 }
 #loader {
-  display: block;
   position: relative;
- 
-}
 
-#loader:before {
-  position: absolute;
-  
-}
+  margin: 200px 0 0 0;
 
-#loader:after {
-  position: absolute;
+  /*IMPORTANTE*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
- 
+  z-index: 1001;
 }
 
 #loader-wrapper .loader-section {
@@ -95,44 +78,30 @@ canvas {
   top: 0;
   width: 100%;
   height: 100%;
-  background: #222222;
+  background: #000000;
   z-index: 1000;
-  -webkit-transform: translateX(0); /* Chrome, Opera 15+, Safari 3.1+ */
-  -ms-transform: translateX(0); /* IE 9 */
-  transform: translateX(0); /* Firefox 16+, IE 10+, Opera */
 }
 
-#loader-wrapper .loader-section.section-left {
-  left: 0;
+#loader-wrapper .loader-section.section-right {
+  top: 0;
 }
 
-
-/* Loaded */
-.loaded #loader-wrapper .loader-section.section-left {
-  -webkit-transform: translateX(-100%); /* Chrome, Opera 15+, Safari 3.1+ */
-  -ms-transform: translateX(-100%); /* IE 9 */
-  transform: translateX(-100%); /* Firefox 16+, IE 10+, Opera */
+.loaded #loader-wrapper .loader-section.section-right {
+  -webkit-transform: translateY(-100%); /* Chrome, Opera 15+, Safari 3.1+ */
+  -ms-transform: translateY(-100%); /* IE 9 */
+  transform: translateY(-100%); /* Firefox 16+, IE 10+, Opera */
 
   -webkit-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
   transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
-
-
 .loaded #loader {
   opacity: 0;
-  -webkit-transition: all 0.3s ease-out;
-  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.7s ease-out;
+  transition: all 0.7s ease-out;
 }
 .loaded #loader-wrapper {
   visibility: hidden;
-
-  -webkit-transform: translateY(-100%); /* Chrome, Opera 15+, Safari 3.1+ */
-  -ms-transform: translateY(-100%); /* IE 9 */
-  transform: translateY(-100%); /* Firefox 16+, IE 10+, Opera */
-
-  -webkit-transition: all 0.3s 1s ease-out;
-  transition: all 0.3s 1s ease-out;
 }
 
 /* JavaScript Turned Off */
@@ -140,14 +109,12 @@ canvas {
   display: none;
 }
 .no-js h1 {
-  color: #000000;
+  color: #222222;
 }
 
 #content {
   margin: 0 auto;
-  padding-bottom: 50px;
-  width: 80%;
-  max-width: 978px;
+  
 }
 
 /* ==========================================================================
@@ -340,35 +307,37 @@ canvas {
   }
 }
 
-
-/*BURBUJA FILL
+/* 
+	Ok so you have made it this far, that means you are very keen to on my code. 
+	Anyway I don't really mind it. This is a great way to learn so you actually doing the right thing:)
+	Follow me @ihatetomatoes
 */
 
 @keyframes fill-level {
   0% {
     transform: translate3d(-413px, -53px, 0) rotate(45deg);
- }
+  }
   15% {
     transform: translate3d(-393px, -73px, 0) rotate(25deg);
- }
+  }
   30% {
     transform: translate3d(-343px, -123px, 0) rotate(45deg);
- }
+  }
   45% {
     transform: translate3d(-283px, -183px, 0) rotate(55deg);
- }
+  }
   60% {
     transform: translate3d(-263px, -203px, 0) rotate(45deg);
- }
+  }
   75% {
     transform: translate3d(-243px, -223px, 0) rotate(35deg);
- }
+  }
   90% {
     transform: translate3d(-223px, -243px, 0) rotate(45deg);
- }
+  }
   100% {
     transform: translate3d(-203px, -263px, 0) rotate(55deg);
- }
+  }
 }
 .fill {
   backface-visibility: hidden;
@@ -395,7 +364,8 @@ canvas {
   border-radius: 50% 0 50% 50%;
   overflow: hidden;
 }
-.fill .gooey-container .level, .fill .gooey-container .bubble {
+.fill .gooey-container .level,
+.fill .gooey-container .bubble {
   background: #ff4081;
 }
 .fill .gooey-container .level {
@@ -409,19 +379,19 @@ canvas {
   text-align: center;
   transform-origin: 50% 0;
   transform: translate3d(-413px, -53px, 0) rotate(45deg);
-  animation: fill-level 5s linear infinite;
+  animation: fill-level 3.5s linear infinite;
   box-shadow: 0 0 100px 0 #00f inset, 0 0 200px 0 #00f inset;
 }
 @keyframes fill-bubbles {
   0% {
     transform: translate3d(-100px, -20px, 0) rotate(0deg);
- }
+  }
   50% {
     transform: translate3d(100px, -40px, 0) rotate(180deg);
- }
+  }
   100% {
     transform: translate3d(-100px, -20px, 0) rotate(360deg);
- }
+  }
 }
 .fill .gooey-container .bubble {
   content: "";
@@ -456,4 +426,15 @@ canvas {
 }
 .fill .gooey-container .bubble:nth-child(8) {
   animation: fill-bubbles 12s ease 0.0625s infinite;
+}
+@keyframes black-hole {
+  0% {
+    transform: scale(1) translate3d(75px, 0, 0);
+  }
+  50% {
+    transform: scale(4) translate3d(55px, 0, 0);
+  }
+  100% {
+    transform: scale(1) translate3d(75px, 0, 0);
+  }
 }

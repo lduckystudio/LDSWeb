@@ -1,99 +1,178 @@
-<!DOCTYPE HTML>
-<html lang="es">
-<head>
-	<title>Lucky Ducky Studio.</title>
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta charset="UTF-8">
-	
-	
-	<!-- Font -->
-	
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700%7CPoppins:400,500" rel="stylesheet">
-	
-	<!-- Stylesheets -->
-	
-	<link href="common-css/bootstrap.css" rel="stylesheet">
-	
-	
-	<link href="common-css/ionicons.css" rel="stylesheet">
-	
-	
-	<link rel="stylesheet" href="common-css/jquery.classycountdown.css" />
-		
-	<link href="01-comming-soon/css/styles.css" rel="stylesheet">
-	
-	<link href="01-comming-soon/css/responsive.css" rel="stylesheet">
-	
-</head>
-<body>
-	<div class="main-area">
-		<div class="container full-height position-static">
-			
-			<section class="left-section full-height">
-		
-				<a class="logo" href="#"><img src="images/logo-black.png" alt="Logo"></a>
-				
-				<div class="display-table">
-					<div class="display-table-cell">
-						<div class="main-content">
-							<h2 class="title"><b>En Construción...</b></h2>
-							<p>Preparateteteteee.</p>
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+  <!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Lucky Ducky Studio</title>
+    <meta name="description" content="Home Page to Lucky Ducky Studio" />
 
-							<div class="email-input-area">
-								<form method="post" action=”mailto:lduckystudio@gmail.com” enctype=”multipart/form-data” name=”EmailPage”>
-									<input class="email-input" name="email" type="text" placeholder="Ingresa tu email"/>
-									<button class="submit-btn" name="submit" type="submit"><b>Enviar</b></button>
-								</form>
-							</div><!-- email-input-area -->
-							
-							<p class="post-desc">nos pondremos en contacto contigo :)</p>
-						</div><!-- main-content -->
-					</div><!-- display-table-cell -->
-				</div><!-- display-table -->
-				
-				<ul class="footer-icons">
-					<li>Siguenos o Escribenos en:</li>
-					<li><a href="https://www.facebook.com/lduckystudio"><i class="ion-social-facebook"></i></a></li>
-					<li><a href="https://twitter.com/lduckystudio"><i class="ion-social-twitter"></i></a></li>
-					<li><a href="https://www.instagram.com/lduckystudio/"><i class="ion-social-instagram-outline"></i></a></li>
-				</ul>
-		
-			</section><!-- left-section -->
-		
-			<section class="right-section" style="background-image: url(images/countdown-1-1000x1000.jpg)">
-			
-				<div class="display-table center-text">
-					<div class="display-table-cell">
-						
-						
-						<div id="rounded-countdown">
-							<div class="countdown" data-remaining-sec="2851200"></div>
-						</div>
-						
-					</div><!-- display-table-cell -->
-				</div><!-- display-table -->
-				
-			</section><!-- right-section -->
-		
-		</div><!-- container -->
-	</div><!-- main-area -->
-	
-	<!-- SCIPTS -->
-	
-	<script src="common-js/jquery-3.1.1.min.js"></script>
-	
-	<script src="common-js/tether.min.js"></script>
-	
-	<script src="common-js/bootstrap.js"></script>
-	
-	<script src="common-js/jquery.classycountdown.js"></script>
-	
-	<script src="common-js/jquery.knob.js"></script>
-	
-	<script src="common-js/jquery.throttle.js"></script>
-	
-	<script src="common-js/scripts.js"></script>
-	
-</body>
+    <!--iOS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+  </head>
+
+  <body class="demo">
+    <!-- Demo content -->
+    <div id="demo-content">
+      <div id="loader-wrapper">
+        <div class="plasma">
+          <!-- Fill 
+          <svg width="0" height="0">
+            <filter id="gooey-fill">
+              <feGaussianBlur
+                in="SourceGraphic"
+                stdDeviation="20"
+                result="blur"
+              />
+              <feColorMatrix
+                in="blur"
+                mode="matrix"
+                values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 50 -16"
+                result="goo"
+              />
+            </filter>
+          </svg>
+          <div class="fill">
+            <div class="gooey-container">
+              <span class="level">
+                <span class="bubble"></span>
+                <span class="bubble"></span>
+                <span class="bubble"></span>
+                <span class="bubble"></span>
+                <span class="bubble"></span>
+                <span class="bubble"></span>
+                <span class="bubble"></span>
+                <span class="bubble"></span>
+              </span>
+            </div>
+          </div>
+          <!--/Fill -->
+        </div>
+
+        <div class="loader-section section-left"></div>
+      </div>
+      <canvas id="webgl" width="500" height="1758"> </canvas>
+      <div id="content">
+        
+      </div>
+    </div>
+
+    <script id="vertexShader" type="x-shader/x-vertex">
+       attribute vec4 a_position;
+
+       uniform mat4 u_modelViewMatrix;
+       uniform mat4 u_projectionMatrix;
+
+       void main() {
+      gl_Position = a_position;
+       }
+    </script>
+
+    <script id="fragmentShader" type="x-shader/x-fragment">
+       precision highp float;
+
+       uniform vec2 u_resolution;
+       uniform vec2 u_mouse;
+       uniform float u_time;
+       uniform sampler2D u_noise;
+       uniform sampler2D u_bricks;
+
+       vec2 getScreenSpace() {
+      vec2 uv = (gl_FragCoord.xy - 0.5 * u_resolution.xy) / min(u_resolution.y, u_resolution.x);
+
+      return uv;
+       }
+
+       vec3 randcol(float i) {
+      i = fract(i/4.);
+      if(i < .25) {
+        return vec3(0,0,.5);
+      } else if(i < .5) {
+        return vec3(0,.5,.5);
+      } else if(i < .75) {
+        return vec3(0,0,.2);
+      } else if(i < 1.) {
+        return vec3(0,.3,.6);
+      }
+       }
+
+       vec2 hash12(float i) {
+      return texture2D(u_noise, vec2(i/255.)).xy;
+       }
+
+       #define PI 3.14159265359
+
+       void main() {
+      vec2 uv = getScreenSpace();
+
+      uv *= 15. + sin(u_time*.5) * 10.;
+      uv.y += sin(u_time*.3)*10.;
+
+      vec2 guv = vec2(uv.x, fract(uv.y));
+      float id = floor(uv.y);
+
+      vec3 col = vec3(0);
+
+      for(float i = -2.; i < 1.; i++) {
+        vec2 suv = guv + vec2(0., i);
+        vec2 suv1 = guv + vec2(0., i-1.);
+
+        float sid = id - i;
+        float sid1 = id - i - 1.;
+
+        vec2 hash = hash12(sid);
+        vec2 hash1 = hash12(sid1);
+
+        vec2 p = suv - vec2(u_time*hash1.x, 0);
+
+        suv.x += u_time*10.*(hash.x*hash.x);
+        suv1.x += u_time*10.*(hash1.x*hash1.x);
+
+        float wave = sin(suv.x + sid) + cos(suv.x * hash.y) * (hash.y*10.);
+        float wave1 = sin(suv1.x + sid1) + cos(suv1.x * hash1.y) * (hash1.y*10.);
+
+        p = vec2(length(p*.02), ((p.y) + wave * .1))*.25;
+
+        float sfield = (suv.y + wave * .1);
+        float sfield1 = (suv.y + wave1 * .1);
+
+        float mask = smoothstep(.05, .0, sfield);
+
+        const vec3 eps = vec3(.001, .001, 0);
+        vec4 tex = texture2D(u_bricks, p);
+        tex += texture2D(u_bricks, p + eps.xy);
+        tex += texture2D(u_bricks, p - eps.xy);
+        tex += texture2D(u_bricks, p + eps.xy * vec2(1, -1));
+        tex += texture2D(u_bricks, p - eps.xy * vec2(1, -1));
+        tex *= .25;
+
+        col = mix(col, (randcol(sid)+.2) * tex.gbr * (suv.y * .5 + .3 + smoothstep(-1.5, -.3, sfield1)), mask);
+      }
+
+      gl_FragColor = vec4(col,1.0);
+       }
+    </script>
+    <!-- partial -->
+    <script src="js/script.js"></script>
+    <!-- /Demo content -->
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>
+      window.jQuery ||
+        document.write(
+          '<script src="js/vendor/jquery-1.9.1.min.js"><\/script>'
+        );
+    </script>
+    <script src="js/main.js"></script>
+  </body>
 </html>

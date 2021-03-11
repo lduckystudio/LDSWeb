@@ -438,3 +438,12 @@ h1 {
     transform: scale(1) translate3d(75px, 0, 0);
   }
 }
+
+
+@media screen and (max-width: 800px) {
+  .imagen img {
+
+    left: 5%;
+
+  }
+}

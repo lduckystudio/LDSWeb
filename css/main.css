@@ -16,12 +16,11 @@ body {
     margin:0;
   }
 
-.imagen img {
+.imagen{
   position: absolute;
-  top: -40%;
-  /** Espaciado de parte de arriba **/
-  left: 33%;
-  /** mover de izquierda a derecha**/
+  display: flex;
+  justify-content: center;
+  align-items: center;
   z-index: 25;
   /** Capas**/
 }
@@ -442,7 +441,8 @@ h1 {
 
 @media screen and (max-width: 800px) {
   .imagen img {
-
+    height: 80%;
+    width: 80%;
     left: 5%;
 
   }

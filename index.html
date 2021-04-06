@@ -4,15 +4,13 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!-->
 <html class="no-js">
-  <!--<![endif]-->
-  <head>
+<!--<![endif]-->
+
+<head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>Lucky Ducky Studio</title>
-    <meta
-      name="description"
-      content="Learn how to recreate the preloader from Cantina Negrar. Tutorial for a passionate front-end web developers by Petr Tichy."
-    />
+    <meta name="description" content="Learn how to recreate the preloader from Cantina Negrar. Tutorial for a passionate front-end web developers by Petr Tichy." />
 
     <!--iOS -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -22,171 +20,69 @@
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/main.css" />
     <script src="js/vendor/modernizr-2.6.2.min.js"></script>
-  </head>
-  <body class="demo">
+</head>
+
+<body class="demo">
     <!-- Demo content -->
     <div id="demo-content">
-      <div id="loader-wrapper">
-        <div id="loader">
-          <svg width="0" height="0">
-            <filter id="gooey-fill">
-              <feGaussianBlur
-                in="SourceGraphic"
-                stdDeviation="20"
-                result="blur"
-              />
-              <feColorMatrix
-                in="blur"
-                mode="matrix"
-                values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 50 -16"
-                result="goo"
-              />
-            </filter>
-          </svg>
-          <div class="fill">
-            <div class="gooey-container">
-              <span class="level">
-                <span class="bubble"></span>
-                <span class="bubble"></span>
-                <span class="bubble"></span>
-                <span class="bubble"></span>
-                <span class="bubble"></span>
-                <span class="bubble"></span>
-                <span class="bubble"></span>
-                <span class="bubble"></span>
-              </span>
+        <div id="loader-wrapper">
+            <div id="loader">
+                <svg width="0" height="0">
+          <filter id="gooey-fill">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="20" result="blur" />
+            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 50 -16"
+              result="goo" />
+          </filter>
+        </svg>
+                <div class="fill">
+                    <div class="gooey-container">
+                        <span class="level">
+              <span class="bubble"></span>
+                        <span class="bubble"></span>
+                        <span class="bubble"></span>
+                        <span class="bubble"></span>
+                        <span class="bubble"></span>
+                        <span class="bubble"></span>
+                        <span class="bubble"></span>
+                        <span class="bubble"></span>
+                        </span>
+                    </div>
+                </div>
+                <!--/Fill -->
+                <div class="imagen">
+                    <img src="img/Recurso 18.png" alt="logo de LDS" width="450px" height="450px" />
+                    <!-- ruta de imagen , nombre de imagen , largo y ancho de imagen -->
+                </div>
             </div>
-          </div>
-          <!--/Fill -->
-          <div class="imagen">
-            <img
-              src="img/Recurso 18.png"
-              alt="logo de LDS"
-              width="450px"
-              height="450px"
-            />
-            <!-- ruta de imagen , nombre de imagen , largo y ancho de imagen -->
-          </div>
+
+            <div class="loader-section section-right"></div>
         </div>
 
-        <div class="loader-section section-right"></div>
-      </div>
+        <div id="content">
 
-      <div id="content">
-		<canvas id="webgl" width="500" height="1758">
-
-   
-   
-		</canvas>
-	  </div>
+            <img class="provicional" src="img/LuckyDuckyStudio/LuckyDuckyStudio-1.png" alt="">
+            <img class="provicional" src="img/LuckyDuckyStudio/LuckyDuckyStudio-2.jpg" alt="">
+            <img class="provicional" src="img/LuckyDuckyStudio/LuckyDuckyStudio-3.png" alt="">
+            <img class="provicional" src="img/LuckyDuckyStudio/LuckyDuckyStudio-4.png" alt="">
+            <img class="provicional" src="img/LuckyDuckyStudio/LuckyDuckyStudio-5.png" alt="">
+            <img class="provicional" src="img/LuckyDuckyStudio/LuckyDuckyStudio-6.png" alt="">
+            <img class="provicional" src="img/LuckyDuckyStudio/LuckyDuckyStudio-7.png" alt="">
+            <img class="provicional" src="img/LuckyDuckyStudio/LuckyDuckyStudio-8.png" alt="">
+        </div>
     </div>
     <!-- /Demo content -->
-	
-	<script id="vertexShader" type="x-shader/x-vertex">
-	  attribute vec4 a_position;
-	  
-	  uniform mat4 u_modelViewMatrix;
-	  uniform mat4 u_projectionMatrix;
-	  
-	  void main() {
-		gl_Position = a_position;
-	  }
-	
-	</script>
-	<script id="fragmentShader" type="x-shader/x-fragment">
-	  precision highp float;
-	  
-	  uniform vec2 u_resolution;
-	  uniform vec2 u_mouse;
-	  uniform float u_time;
-	  uniform sampler2D u_noise;
-	  uniform sampler2D u_bricks;
-	  
-	  vec2 getScreenSpace() {
-		vec2 uv = (gl_FragCoord.xy - 0.5 * u_resolution.xy) / min(u_resolution.y, u_resolution.x);
-		
-		return uv;
-	  }
-	  
-	  vec3 randcol(float i) {
-		i = fract(i/4.);
-		if(i < .25) {
-		  return vec3(0,0,.5);
-		} else if(i < .5) {
-		  return vec3(0,.5,.5);
-		} else if(i < .75) {
-		  return vec3(0,0,.2);
-		} else if(i < 1.) {
-		  return vec3(0,.3,.6);
-		}
-	  }
-	  
-	  vec2 hash12(float i) {
-		return texture2D(u_noise, vec2(i/255.)).xy;
-	  }
-	  
-	  #define PI 3.14159265359
-	
-	  void main() {
-		vec2 uv = getScreenSpace();
-		
-		uv *= 15. + sin(u_time*.5) * 10.;
-		uv.y += sin(u_time*.3)*10.;
-		
-		vec2 guv = vec2(uv.x, fract(uv.y));
-		float id = floor(uv.y);
-		
-		vec3 col = vec3(0);
-		
-		for(float i = -2.; i < 1.; i++) {
-		  vec2 suv = guv + vec2(0., i);
-		  vec2 suv1 = guv + vec2(0., i-1.);
-		  
-		  float sid = id - i;
-		  float sid1 = id - i - 1.;
-		  
-		  vec2 hash = hash12(sid);
-		  vec2 hash1 = hash12(sid1);
-		  
-		  vec2 p = suv - vec2(u_time*hash1.x, 0);
-		  
-		  suv.x += u_time*10.*(hash.x*hash.x);
-		  suv1.x += u_time*10.*(hash1.x*hash1.x);
-		  
-		  float wave = sin(suv.x + sid) + cos(suv.x * hash.y) * (hash.y*10.);
-		  float wave1 = sin(suv1.x + sid1) + cos(suv1.x * hash1.y) * (hash1.y*10.);
-		  
-		  p = vec2(length(p*.02), ((p.y) + wave * .1))*.25;
-		  
-		  float sfield = (suv.y + wave * .1);
-		  float sfield1 = (suv.y + wave1 * .1);
-		  
-		  float mask = smoothstep(.05, .0, sfield);
-		  
-		  const vec3 eps = vec3(.001, .001, 0);
-		  vec4 tex = texture2D(u_bricks, p);
-		  tex += texture2D(u_bricks, p + eps.xy);
-		  tex += texture2D(u_bricks, p - eps.xy);
-		  tex += texture2D(u_bricks, p + eps.xy * vec2(1, -1));
-		  tex += texture2D(u_bricks, p - eps.xy * vec2(1, -1));
-		  tex *= .25;
-		  
-		  col = mix(col, (randcol(sid)+.2) * tex.gbr * (suv.y * .5 + .3 + smoothstep(-1.5, -.3, sfield1)), mask);
-		}
-	
-		gl_FragColor = vec4(col,1.0);
-	  }
-	  
-	</script>
+
+
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script>
-      window.jQuery ||
-        document.write(
-          '<script src="js/vendor/jquery-1.9.1.min.js"><\/script>'
-        );
+        window.jQuery ||
+            document.write(
+                '<script src="js/vendor/jquery-1.9.1.min.js"><\/script>'
+            );
     </script>
     <script src="js/main.js"></script>
-	<script  src="js/script.js"></script>
+    <script src="js/script.js"></script>
 
-  </body>
+</body>
+
 </html>

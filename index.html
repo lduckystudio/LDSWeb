@@ -3,84 +3,153 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!-->
-<html class="no-js">
-<!--<![endif]-->
+<html>
 
 <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Lucky Ducky Studio</title>
-    <meta name="description" content="Learn how to recreate the preloader from Cantina Negrar. Tutorial for a passionate front-end web developers by Petr Tichy." />
+    <meta name="description" content="Lucky Ducky Studio es un estudio creativo que se dedica a crear todo lo que necesita tu empresa para pasar al siguiente nivel">
 
     <!--iOS -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="icon" type="image/vnd.microsoft.icon" href="favicon.ico" sizes="16x16 24x24 36x36 48x48">
 
-    <link rel="stylesheet" href="css/normalize.css" />
-    <link rel="stylesheet" href="css/main.css" />
-    <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+
+    <!-- Bootstrap Styles -->
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/fonts/simple-line-icons.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/splash.css">
 </head>
 
-<body class="demo">
-    <!-- Demo content -->
-    <div id="demo-content">
-        <div id="loader-wrapper">
-            <div id="loader">
-                <svg width="0" height="0">
-          <filter id="gooey-fill">
-            <feGaussianBlur in="SourceGraphic" stdDeviation="20" result="blur" />
-            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 50 -16"
-              result="goo" />
-          </filter>
-        </svg>
-                <div class="fill">
-                    <div class="gooey-container">
-                        <span class="level">
-              <span class="bubble"></span>
-                        <span class="bubble"></span>
-                        <span class="bubble"></span>
-                        <span class="bubble"></span>
-                        <span class="bubble"></span>
-                        <span class="bubble"></span>
-                        <span class="bubble"></span>
-                        <span class="bubble"></span>
-                        </span>
-                    </div>
-                </div>
-                <!--/Fill -->
-                <div class="imagen">
-                    <img src="img/Recurso 18.png" alt="logo de LDS" width="450px" height="450px" />
-                    <!-- ruta de imagen , nombre de imagen , largo y ancho de imagen -->
+
+
+<div id="demo-content">
+    <div id="loader-wrapper">
+        <div id="loader">
+            <svg width="0" height="0">
+                <filter id="gooey-fill">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="20" result="blur" />
+                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 50 -16" result="goo" />
+                </filter>
+            </svg>
+            <div class="fill">
+                <div class="gooey-container">
+                    <span class="level">
+                    <span class="bubble"></span>
+                    <span class="bubble"></span>
+                    <span class="bubble"></span>
+                    <span class="bubble"></span>
+                    <span class="bubble"></span>
+                    <span class="bubble"></span>
+                    <span class="bubble"></span>
+                    <span class="bubble"></span>
+                    </span>
                 </div>
             </div>
 
-            <div class="loader-section section-right"></div>
+            <div class="imagen">
+                <img src="assets/img/Recurso 18.png" alt="logo de LDS" width="450px" height="450px" />
+            </div>
         </div>
-
-        <div id="content">
-            <img class="provicional" src="img/LuckyDuckyStudio/LuckyDuckyStudio-1.jpg" alt="LuckyDuckyStudio Image">
-            <img class="provicional" src="img/LuckyDuckyStudio/LuckyDuckyStudio-2.jpg" alt="LuckyDuckyStudio Image">
-            <img class="provicional" src="img/LuckyDuckyStudio/LuckyDuckyStudio-3.jpg" alt="LuckyDuckyStudio Image">
-            <img class="provicional" src="img/LuckyDuckyStudio/LuckyDuckyStudio-4.jpg" alt="LuckyDuckyStudio Image">
-            <img class="provicional" src="img/LuckyDuckyStudio/LuckyDuckyStudio-5.jpg" alt="LuckyDuckyStudio Image">
-            <img class="provicional" src="img/LuckyDuckyStudio/LuckyDuckyStudio-6.jpg" alt="LuckyDuckyStudio Image">
-            <img class="provicional" src="img/LuckyDuckyStudio/LuckyDuckyStudio-7.jpg" alt="LuckyDuckyStudio Image">
-            <img class="provicional" src="img/LuckyDuckyStudio/LuckyDuckyStudio-8.jpg" alt="LuckyDuckyStudio Image">
-        </div>
+        <div class="loader-section section-right"></div>
     </div>
-    <!-- /Demo content -->
+</div>
 
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script>
-        window.jQuery ||
-            document.write(
-                '<script src="js/vendor/jquery-1.9.1.min.js"><\/script>'
-            );
-    </script>
-    <script src="js/main.js"></script>
-    <script src="js/script.js"></script>
+
+
+<body id="page-top"><a class="menu-toggle rounded" href="#"><i class="fa fa-bars"></i></a>
+
+    <!--    NAVBAR  -->
+    <nav class="navbar navbar-light navbar-expand" id="sidebar-wrapper">
+        <div class="container"><button data-toggle="collapse" class="navbar-toggler d-none active" data-target="#"></button>
+            <div class="collapse navbar-collapse">
+                <div id="menu-container">
+                    <div id="menu-conteiner-menu">
+                        <div id="menu-language">
+                            <ul class="navbar-nav">
+                                <li><a class="language-text" href="#">Esp</a></li>
+                                <li><a class="language-text disabled" href="#"><strike>Eng</strike></a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <ul class="navbar-nav" id="sidebar-nav">
+                                <li><a class="menu-text" href="#page-top">Home</a></li>
+                                <li><a class="menu-text" href="#about">About</a></li>
+                                <li><a class="menu-text disabled" href="#services"><strike>Services</strike></a></li>
+                                <li><a class="menu-text disabled" href="#portfolio"><strike>Portfolio</strike></a></li>
+                                <li><a class="menu-text disabled" href="#contact"><strike>Contact</strike></a></li>
+                            </ul>
+
+                        </div>
+                        <div id="menu-politicas">
+                            <a class="politicas-text" href="#contact">Term & Conditions</a>
+                        </div>
+                    </div>
+                    <div id="menu-container-social">
+
+                        <a target="_blank" href="https://www.facebook.com/lduckystudio"><img class="rs" src="assets/img/Icons/facebook.png" alt="linkedin icon"></a>
+                        <a target="_blank" href="https://www.linkedin.com/company/lduckystudio/"><img class="rs" src="assets/img/Icons/linkedin.png" alt="linkedin icon"></a>
+                        <a target="_blank" href="https://www.instagram.com"><img class="rs" src="assets/img/Icons/instagram.png" alt="linkedin icon"></a>
+                        <a target="_blank" href="https://twitter.com/lduckystudio"><img class="rs" src="assets/img/Icons/twitter.png" alt="linkedin icon"></a>
+                        <a target="_blank" href="https://www.behance.net/LuckyDuckyStudio"><img class="rs" src="assets/img/Icons/behance.png" alt="linkedin icon"></a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!--    HEADER  -->
+    <header class="d-flex masthead" style="background-image:url('https://images.pexels.com/photos/2832382/pexels-photo-2832382.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');">
+        <div class="container text-center my-auto">
+            <div>
+                <img class="imagen-header" src="assets/img/logo.png" alt="logo de LDS" />
+            </div>
+            <p class="mb-1 header-title">Estamos en Construcción</p>
+            <p class="mb-5 header-text"><em>Pero puedes ver un poco de lo que hacemos</em></p><a class="btn btn-primary btn-xl js-scroll-trigger header-text" role="button" href="#about">Servicios</a>
+            <div class="overlay"></div>
+        </div>
+    </header>
+
+    <!--    ABOUT  -->
+    <section class="bg-light " id="about">
+        <img class="provicional" src="assets/img/LuckyDuckyStudio/LuckyDuckyStudio-1.jpg" alt="LuckyDuckyStudio Image">
+        <img class="provicional" src="assets/img/LuckyDuckyStudio/LuckyDuckyStudio-2.jpg" alt="LuckyDuckyStudio Image">
+        <img class="provicional" src="assets/img/LuckyDuckyStudio/LuckyDuckyStudio-3.jpg" alt="LuckyDuckyStudio Image">
+        <img class="provicional" src="assets/img/LuckyDuckyStudio/LuckyDuckyStudio-4.jpg" alt="LuckyDuckyStudio Image">
+        <img class="provicional" src="assets/img/LuckyDuckyStudio/LuckyDuckyStudio-5.jpg" alt="LuckyDuckyStudio Image">
+        <img class="provicional" src="assets/img/LuckyDuckyStudio/LuckyDuckyStudio-6.jpg" alt="LuckyDuckyStudio Image">
+        <img class="provicional" src="assets/img/LuckyDuckyStudio/LuckyDuckyStudio-7.jpg" alt="LuckyDuckyStudio Image">
+        <img class="provicional" src="assets/img/LuckyDuckyStudio/LuckyDuckyStudio-8.jpg" alt="LuckyDuckyStudio Image">
+    </section>
+
+    <!--    FOOTER  -->
+    <footer class="text-center footer">
+        <div class="container">
+            <p class="text-muted mb-0 small">Copyright &nbsp;© Lucky Ducky Studio 2021</p>
+        </div><a class="js-scroll-trigger scroll-to-top rounded" href="#page-top"><i class="fa fa-angle-up"></i></a>
+    </footer>
+
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="assets/js/stylish-portfolio.js"></script>
+
+    <!-- Script para el Load-->
+    <script src="assets/js/main.js"></script>
 
 </body>
 
